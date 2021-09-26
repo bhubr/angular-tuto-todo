@@ -13,6 +13,7 @@ interface Task {
 export class AppComponent {
   tasks: Task[] = [];
   taskTitle = '';
+  darkMode = false;
 
   addTask() {
     const newTask: Task = {
@@ -26,5 +27,15 @@ export class AppComponent {
 
   deleteTask(index: number) {
     this.tasks.splice(index, 1);
+  }
+
+  toggleDarkMode() {
+    this.darkMode = !this.darkMode;
+    if (this.darkMode) {
+      document.body.classList.add("app-dark");
+    }
+    else {
+      document.body.classList.remove("app-dark");
+    }
   }
 }

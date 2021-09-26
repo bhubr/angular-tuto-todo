@@ -1,0 +1,12 @@
+<nav
+  class="navbar navbar-expand-lg"
+  [class]="darkMode ? ['navbar-dark', 'bg-dark'] : ['navbar-light', 'bg-light']"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Todo-list</a>
+
+    <button type="button" class="btn" [class]="darkMode ? 'btn-outline-light' : 'btn-outline-dark'" (click)="toggleDark.emit()">
+      {{ darkMode ? "dark" : "light" }}
+    </button>
+  </div>
+</nav>

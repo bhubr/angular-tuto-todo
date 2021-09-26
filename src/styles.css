@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.app-dark {
+  background: #333;
+  color: #eee;
+}
+
+.app-dark .form-control,
+.app-dark .form-control:focus {
+  background: #444;
+}
