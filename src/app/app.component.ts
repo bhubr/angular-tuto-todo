@@ -1,16 +1,24 @@
 import { Component } from '@angular/core';
 
+interface Person {
+  name: string;
+  date: Date;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  people = ['Mary', 'John'];
-  newPerson = '';
+  people: Person[] = [];
+  personName = '';
 
   addPerson() {
-    this.people.push(this.newPerson);
-    this.newPerson = '';
+    const newPerson = {
+      name: this.personName,
+      date: new Date()
+    }
+    this.people.push(newPerson);
+    this.personName = '';
   }
 }
