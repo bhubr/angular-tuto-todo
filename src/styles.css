@@ -4,6 +4,8 @@
 }
 
 .app-dark .form-control,
-.app-dark .form-control:focus {
+.app-dark .form-control:focus,
+.app-dark .list-group-item {
   background: #444;
+  color: #eee;
 }
