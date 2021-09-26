@@ -1,10 +1,15 @@
 <div class="container">
-
+  <p *ngIf="tasks.length === 0">No tasks yet!</p>
   <ul class="list-group">
-    <li class="task list-group-item" [class]="{ done: task.done }" *ngFor="let task of tasks">
+    <li
+      class="task list-group-item"
+      [class]="{ done: task.done }"
+      *ngFor="let task of tasks; index as idx"
+    >
       <input type="checkbox" [(ngModel)]="task.done" />
       <div class="flex-grow-1 px-2">{{ task.title }}</div>
-      {{ task.createdAt | date:'h:mm:ss' }}
+      {{ task.createdAt | date: "h:mm:ss" }}
+      <button class="btn btn-secondary" type="button" (click)="deleteTask(idx)">x</button>
     </li>
   </ul>
 
@@ -12,9 +17,14 @@
   <form (submit)="addTask()">
     <div class="form-group">
       <label for="title">New task's title</label>
-      <input id="title" name="title" class="form-control" [(ngModel)]="taskTitle" placeholder="Do my laundry" />
+      <input
+        id="title"
+        name="title"
+        class="form-control"
+        [(ngModel)]="taskTitle"
+        placeholder="Do my laundry"
+      />
     </div>
     <button class="btn btn-primary mt-2" type="submit">Add</button>
   </form>
-
 </div>

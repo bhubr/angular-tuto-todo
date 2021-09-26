@@ -23,4 +23,8 @@ export class AppComponent {
     this.tasks.push(newTask);
     this.taskTitle = '';
   }
+
+  deleteTask(index: number) {
+    this.tasks.splice(index, 1);
+  }
 }
