@@ -4,4 +4,9 @@
   </li>
 </ul>
 
-<form></form>
+<h3>Add person</h3>
+<form (submit)="addPerson()">
+  <label for="name">New person's name</label>
+  <input name="name" [(ngModel)]="newPerson" placeholder="Ralph" />
+  <button type="submit">Add</button>
+</form>

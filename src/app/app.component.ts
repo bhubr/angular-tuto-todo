@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   people = ['Mary', 'John'];
+  newPerson = '';
+
+  addPerson() {
+    this.people.push(this.newPerson);
+    this.newPerson = '';
+  }
 }
