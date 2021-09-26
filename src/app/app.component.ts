@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-interface Person {
-  name: string;
-  date: Date;
+interface Task {
+  title: string;
+  createdAt: Date;
+  done: boolean;
 }
 @Component({
   selector: 'app-root',
@@ -10,15 +11,16 @@ interface Person {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  people: Person[] = [];
-  personName = '';
+  tasks: Task[] = [];
+  taskTitle = '';
 
-  addPerson() {
-    const newPerson = {
-      name: this.personName,
-      date: new Date()
+  addTask() {
+    const newTask: Task = {
+      title: this.taskTitle,
+      createdAt: new Date(),
+      done: false,
     }
-    this.people.push(newPerson);
-    this.personName = '';
+    this.tasks.push(newTask);
+    this.taskTitle = '';
   }
 }

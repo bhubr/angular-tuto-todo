@@ -1,12 +1,20 @@
-<ul>
-  <li *ngFor="let person of people">
-    {{ person.name }} {{ person.date | date:'h:mm:ss' }}
-  </li>
-</ul>
+<div class="container">
 
-<h3>Add person</h3>
-<form (submit)="addPerson()">
-  <label for="name">New person's name</label>
-  <input name="name" [(ngModel)]="personName" placeholder="Ralph" />
-  <button type="submit">Add</button>
-</form>
+  <ul class="list-group">
+    <li class="task list-group-item" [class]="{ done: task.done }" *ngFor="let task of tasks">
+      <input type="checkbox" [(ngModel)]="task.done" />
+      <div class="flex-grow-1 px-2">{{ task.title }}</div>
+      {{ task.createdAt | date:'h:mm:ss' }}
+    </li>
+  </ul>
+
+  <h3>Add task</h3>
+  <form (submit)="addTask()">
+    <div class="form-group">
+      <label for="title">New task's title</label>
+      <input id="title" name="title" class="form-control" [(ngModel)]="taskTitle" placeholder="Do my laundry" />
+    </div>
+    <button class="btn btn-primary mt-2" type="submit">Add</button>
+  </form>
+
+</div>

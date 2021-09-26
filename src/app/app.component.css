@@ -1,0 +1,9 @@
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #999;
+}
